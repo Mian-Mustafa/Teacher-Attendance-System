@@ -1,96 +1,106 @@
-📘 Teacher Attendance Management System
-This is a comprehensive C++ project for managing university-level teacher attendance. It is designed to simulate a fully functional attendance monitoring and administrative tool for academic institutions.
+# 📘 Teacher Attendance Management System
 
-🚀 Features
-👤 Teacher Profiles (Name, ID, Subject, Department, Type)
+A comprehensive **C++ project** for managing university-level teacher attendance. This system simulates a fully functional attendance monitoring and administrative tool tailored for academic institutions.
 
-⏱️ Attendance Logging (In-Time, Out-Time)
+---
 
-🕒 Time Calculations:
+## 🚀 Features
 
-Late arrivals
+### 👤 Teacher Profiles
+- Name, ID, Subject, Department, Type (Full-time/Part-time)
 
-Early departures
+### ⏱️ Attendance Logging
+- In-Time and Out-Time tracking
+- Calculates:
+  - ⏰ Late Arrivals
+  - 🕔 Early Departures
+  - ⌛ Short and Excess Hours
 
-Short and excess hours
+### 📊 Report Generation
+- Daily summary reports
+- Text-based log storage
 
-📊 Report Generation:
+### 🧑‍💼 Admin Panel
+- Add, remove, and view teachers
+- Undo functionality using **Stack**
 
-Daily summary reports
+### 📥 Login Queue System
+- FIFO-based teacher login queue
 
-Text-based log storage
+### 🌲 Teacher Record Lookup (BST)
+- Binary Search Tree for fast teacher ID search
 
-🧑‍💼 Admin Panel:
+### 🏢 Department Management
+- Department-wise view
+- Graph structure (adjacency list) for department mapping
 
-Add, remove, and view teachers
+---
 
-Undo functionality via stack
+## 🧱 Code Architecture
 
-📂 Persistent Storage:
+### 📦 Classes
+- `Person` – Base class for all users
+- `Teacher` – Inherits from `Person` and `Attendance`
+- `Attendance` – Handles time calculations
+- `Admin` – Manages teacher records
+- `Department`, `DepartmentGraph` – Department info and graph
+- `ReportGenerator` – Creates daily reports
 
-Logs (attendance_log.txt)
+### 🔧 Data Structures Used
+- 🌀 **Stack** – Undo operations  
+- 📬 **Queue** – Login order tracking  
+- 🌳 **Binary Search Tree (BST)** – Teacher record retrieval  
+- 🔗 **Graph (Adjacency List)** – Department mapping
 
-Teacher database (teachers.txt)
+---
 
-Attendance reports (summary_report.txt)
+## 💾 File Structure
 
-📥 Login Queue System (FIFO)
+| File Name                  | Description                            |
+|---------------------------|----------------------------------------|
+| `Teacher Attendance System.cpp` | Main source file                    |
+| `teachers.txt`            | Teacher database (flat file)           |
+| `attendance_log.txt`      | In/Out log records                     |
+| `summary_report.txt`      | Daily report generated from logs       |
 
-🌲 Teacher BST (Binary Search Tree):
+---
 
-Fast retrieval of teacher records by ID
+## 🧠 Key Concepts Practiced
 
-🏢 Department Management:
+- Object-Oriented Programming (OOP)
+- Inheritance & Polymorphism
+- File I/O and Data Persistence
+- Custom Stack, Queue, BST, Graph Implementations
+- Date and Time Handling
 
-View department information
+---
 
-Simulated department graph (adjacency-based)
+## 🏫 Ideal For
 
-🧱 Code Structure
-Object-Oriented Design:
-Person – Base class for all users.
+- 🎓 University Semester Projects  
+- 🧠 C++ DSA & OOP Practice  
+- 💼 Software Engineering Demonstrations  
+- 📁 Academic Portfolio Enhancement  
 
-Teacher – Derived from Person and Attendance.
+---
 
-Attendance – Handles all time-related calculations.
+## 🛠️ Getting Started
 
-Admin – Manages teacher database and actions.
+### 🔗 Prerequisites
+- C++ compiler (e.g., g++, MinGW, or MSVC)
+- Any IDE (e.g., VS Code, Code::Blocks, or Visual Studio)
 
-Department, DepartmentGraph – For department metadata.
+### 🧪 Run Instructions
 
-ReportGenerator – For generating daily reports.
+```bash
+# Clone the repository
+git clone https://github.com/your-username/teacher-attendance-system.git
 
-Data Structures Used:
-Stack – For undo actions
+# Navigate into the project directory
+cd teacher-attendance-system
 
-Queue – For teacher login queue
+# Compile the program (example using g++)
+g++ -o AttendanceSystem "Teacher Attendance System.cpp"
 
-Binary Search Tree – For optimized teacher lookup
-
-Graph – For department mapping
-
-💾 File Details
-Teacher Attendance System.cpp – Main project source file.
-
-attendance_log.txt – Stores individual log entries.
-
-summary_report.txt – Daily report generated via ReportGenerator.
-
-teachers.txt – Flat-file storage of teacher information.
-🧠 Concepts Practiced
-Object-Oriented Programming (OOP)
-
-File Handling
-
-Time and Date manipulation
-
-Custom data structures (Stack, Queue, BST, Graph)
-
-Inheritance & Polymorphism
-
-🏫 Ideal For
-University semester projects
-
-C++ practice for data structures and OOP
-
-Demonstration in software engineering or professional practices
+# Run the compiled program
+./AttendanceSystem
